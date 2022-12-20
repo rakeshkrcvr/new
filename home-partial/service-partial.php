@@ -14,10 +14,9 @@
     $slider_result = mysqli_query($conn, $slider_query);
     while($our_service = mysqli_fetch_array($slider_result)){
        ?>
-
-                            <h2 class="title-a"><?php echo $our_service['ser_heading']?></h2>
+            <h2 class="title-a"><?php echo $our_service['ser_heading']?></h2>
                             <?php
-    }
+                            }
                             ?>
                         </div>
                     </div>
@@ -57,10 +56,7 @@
 
                 <?php
                  }
-?>
-
-               
-               
+                        ?>  
             </div>
         </div>
     </section>

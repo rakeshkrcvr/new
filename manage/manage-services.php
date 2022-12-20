@@ -148,5 +148,5 @@ if ($_FILES['ser_icon']['name'])
             <!-- / Content -->
 
           <?php
-          include 'manage-footer.php';
+          include 'manage-footer-copyright.php';
           ?>

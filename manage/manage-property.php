@@ -79,10 +79,18 @@ include 'importent-header.php';
               <!-- Basic Layout & Basic with Icons -->
               <div class="row">
                 <!-- Basic Layout -->
+                <div class="col-lg-12">
+                        <a href="manage-property-list.php"><button type="submit" class="btn btn-primary">All Properties List</button></a>
+                        <div>
+                          <br>
                 <div class="col-xxl">
+
+                        
                   <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="mb-0">Servicess  Details</h5>
+                    
+                    
+                    <h5 class="mb-0">Servicess  Details</h5>
                       
                     </div>
                     <div class="card-body">
@@ -251,4 +259,4 @@ include 'importent-header.php';
             </div>
             <!-- / Content -->
 
-         <?php include 'manage-footer.php'; ?>
+         <?php include 'manage-footer-copyright.php'; ?>

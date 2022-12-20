@@ -7,11 +7,47 @@ include 'importent-header.php';
 
 
 
+<?php
 
-          <!-- Navbar -->
+if(isset($_POST['submit'])){
+
+// craete a varible for you create batabase table row
+
+$top_address = mysqli_real_escape_string($conn, $_POST['top_address']);
+$top_email = mysqli_real_escape_string($conn, $_POST['top_email']);
+$top_mobile = mysqli_real_escape_string($conn, $_POST['top_mobile']);
 
 
-          <!-- / Navbar -->
+
+
+// if ($_FILES['testimonials_image']['name'])
+// {
+//     move_uploaded_file($_FILES['testimonials_image']['tmp_name'], "uploads/" . $_FILES['testimonials_image']['name']);
+//     $testimonials_image = "uploads/" . $_FILES['testimonials_image']['name'];
+// }
+
+ // insert qurey in datatable code
+
+ $query =  "INSERT INTO top_header (top_address,top_email,top_mobile) 
+ VALUES ('$top_address','$top_email','$top_mobile')";
+
+ $query_run = mysqli_query($conn, $query);
+  
+               if($query_run)
+                {
+                    echo "inserted"; 
+                    exit(0);
+                }
+                else
+                {
+                    echo "insert Failed";
+                    exit(0);
+                }
+
+}
+
+
+?>
 
           <!-- Content wrapper -->
           <div class="content-wrapper">
@@ -30,19 +66,33 @@ include 'importent-header.php';
                       
                     </div>
                     <div class="card-body">
-                      <form>
+                      <form method="POST" action="manage-top-header.php" enctype="multipart/form-data">
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Address Text</label>
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">Address</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" name="" id="" placeholder="Address text" />
+                            <input type="text" class="form-control" name="top_address" id="" placeholder="Address..." />
                           </div>
                         </div>
                       
                         <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Email Id</label>
+                          <div class="col-sm-10">
+                            <input
+                              type="email"
+                              name="top_email"
+                              id="basic-default-phone"
+                              class="form-control phone-mask"
+                              placeholder="Email ID"
+                              />
+                          </div>
+                        </div>
+
+                        <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Phone No</label>
                           <div class="col-sm-10">
                             <input
-                              type="text"
+                              type="tel"
+                              name="top_mobile"
                               id="basic-default-phone"
                               class="form-control phone-mask"
                               placeholder="658 799 8941"
@@ -52,7 +102,7 @@ include 'importent-header.php';
                         
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                           </div>
                         </div>
                       </form>
@@ -140,4 +190,4 @@ include 'importent-header.php';
 
           
 
-            <?php include 'manage-footer.php';?>
+            <?php include 'manage-footer-copyright.php';?>

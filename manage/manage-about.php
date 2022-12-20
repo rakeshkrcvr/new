@@ -141,4 +141,4 @@ if ($_FILES['about_image']['name'])
             </div>
             <!-- / Content -->
 
-           <?php include 'manage-footer.php' ?>
+           <?php include 'manage-footer-copyright.php' ?>

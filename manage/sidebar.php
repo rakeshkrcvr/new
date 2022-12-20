@@ -94,7 +94,7 @@ include 'importent-css.php'
 
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="top-header.php" class="menu-link">
+                  <a href="manage-top-header.php" class="menu-link">
                     <div data-i18n="Without menu">Top Header</div>
                   </a>
                 </li>
@@ -152,7 +152,7 @@ include 'importent-css.php'
                 </li>
 
                 <li class="menu-item">
-                  <a href="layouts-blank.php" class="menu-link">
+                  <a href="manage-footer.php" class="menu-link">
                     <div data-i18n="Blank">Footer</div>
                   </a>
                 </li>

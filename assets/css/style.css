@@ -2004,10 +2004,12 @@ a:hover {
 }
 
 .testimonial-author {
-  margin-left: 1rem;
+  margin-left: 0rem;
   display: inline-flex;
-  font-size: 1.2rem;
-  color: #000000;
+  font-size: 16px;
+  color: #474747;
+  line-height: 38px;
+  margin-top: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -2202,4 +2204,31 @@ footer .credits {
 
 .section-about .content-c{
   align-items: center !important;
+}
+
+#top-h{
+  background: #848484;
+}
+.top-head {
+  
+  height: 33px;
+  line-height: 32px;
+  padding: 0px 83px;
+}
+
+.top-head p{
+ font-size: 13px;
+ color:#fff;
+}
+
+#top-h ul {
+  position: absolute;
+  right: 66px;
+}
+
+#top-h ul li {
+  float: left;
+  list-style: none;
+  color: #fff;
+  padding: 0px 6px;
 }

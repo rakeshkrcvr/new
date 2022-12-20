@@ -13,21 +13,25 @@ if(isset($_POST['submit'])){
 
 // $news_image = mysqli_real_escape_string($conn, $_POST['news_image']);
 $news_category = mysqli_real_escape_string($conn, $_POST['news_category']);
+$news_author = mysqli_real_escape_string($conn, $_POST['news_author']);
 $news_name = mysqli_real_escape_string($conn, $_POST['news_name']);
 $news_time = mysqli_real_escape_string($conn, $_POST['news_time']);
-$news_author = mysqli_real_escape_string($conn, $_POST['news_author']);
 $btn_link = mysqli_real_escape_string($conn, $_POST['btn_link']);
+
 
 if ($_FILES['news_image']['name'])
 {
     move_uploaded_file($_FILES['news_image']['tmp_name'], "uploads/" . $_FILES['news_image']['name']);
-    $news_image = "uploads/" . $_FILES['news_image']['name'];
+    $news_image_des = "uploads/" . $_FILES['news_image']['name'];
 }
 
  // insert qurey in datatable code
 
- $query =  "INSERT INTO latest_news (news_image,news_category,news_author,news_name,news_time ,btn_link) 
- VALUES ('$news_image','$news_category','$news_author','$news_name','$news_time','$btn_link')";
+ $query =  "INSERT INTO latest_news (news_category,news_author,news_name,news_time,btn_link,news_image) 
+ VALUES ('$news_category','$news_author','$news_name','$news_time','$btn_link','$news_image_des')";
+
+
+
 
  $query_run = mysqli_query($conn, $query);
   
@@ -88,17 +92,6 @@ if ($_FILES['news_image']['name'])
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-phone">News Name</label>
-                          <div class="col-sm-10">
-                            <input
-                              type="text"
-                              name="news_name"
-                              class="form-control phone-mask"
-                              placeholder="Text"
-                              />
-                          </div>
-                        </div>
-                        <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Author:</label>
                           <div class="col-sm-10">
                             <input
@@ -109,6 +102,18 @@ if ($_FILES['news_image']['name'])
                               />
                           </div>
                         </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-phone">News Name</label>
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              name="news_name"
+                              class="form-control phone-mask"
+                              placeholder="Text"
+                              />
+                          </div>
+                        </div>
+                        
                         
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="basic-default-phone">Date & Time</label>
@@ -155,4 +160,4 @@ if ($_FILES['news_image']['name'])
             </div>
             <!-- / Content -->
 
-     <?php include 'manage-footer.php' ?>
+     <?php include 'manage-footer-copyright.php' ?>
